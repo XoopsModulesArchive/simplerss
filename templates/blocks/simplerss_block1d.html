@@ -1,0 +1,12 @@
+<!-- begin of simplerss block -->
+<table class="outer" cellspacing="1" width="95%">
+<tr class="head"><td><a href='<{$block.link}>' target='_blank'><{$block.title}></a></td></tr>
+<{foreach item=item from=$block.data name=rssLoop}>
+<{if $smarty.foreach.rssLoop.iteration lte $block.max_display_num }>
+ <tr class="<{cycle values="even,odd"}>">
+    <td align="left">[<a href='<{$item.link}>' target='_blank'><{$item.text}></a>]<br><{$item.description}></td>
+ </tr>
+<{/if}>
+<{/foreach}>
+</table>
+<!-- end of simplerss block -->
